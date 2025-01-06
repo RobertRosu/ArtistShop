@@ -30,6 +30,10 @@ export class ArticulosService {
     return this.http.post(`http://localhost/ArtistShop_API/modificacion.php?id=${datos.id}`, datos)
   }
 
+  public nuevo(datos: any){
+    return this.http.post('http://localhost/ArtistShop_API/alta.php', datos)
+  }
+
   public baja(id: number){
     return this.http.delete(`http://localhost/ArtistShop_API/baja.php?id=${id}`)
   }
