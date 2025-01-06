@@ -15,8 +15,13 @@
             id="descripcion" 
             [value]="articulo.descripcion != '' || undefined ? articulo.descripcion : ''">
         </div>
-        <div><label for="precio">precio: </label>
-            <input type="number" name="precio" id="precio">
+        <div>
+            <label for="precio">precio: </label>
+            <input 
+            type="number" 
+            name="precio" 
+            id="precio"
+            [value]="articulo.precio != undefined ? articulo.precio : ''">
         </div>
         <div>
             <label for="imagen">imagen: </label>
@@ -28,14 +33,22 @@
         </div>
 
         <div class="opciones">
-            <button>Agregar</button>
-            <button>Modificar</button>
+            <button 
+            (click)="$event.preventDefault()"
+            [class]="opcion == 'modif' ? 'hide' : ''">Agregar</button>
+
+            <button 
+            (click)="$event.preventDefault()"
+            [class]="opcion == 'alta' ? 'hide' : ''">Modificar</button>
         </div>
     </form>
     
     <div id="imagen-preview">
         <h1>Foto existente</h1>
         <img [src]="articulo.imagen == '' || undefined ? 'assets/images/dummy-image-square.jpg' : 'assets/' + articulo.imagen" alt="imagen preview">
-        <input type="file">
+        <input 
+        type="file" 
+        #files 
+        (change)="cambiarRutaArchivo(files.files && files.files.length > 0 ? files.files[files.files.length - 1].name : '')">
     </div>
 </div>

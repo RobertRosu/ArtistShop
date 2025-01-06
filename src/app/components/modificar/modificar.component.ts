@@ -28,4 +28,8 @@ export class ModificarComponent {
       console.log(this.articulo)
     })
   }
+
+  cambiarRutaArchivo(path: string | undefined){
+    this.articulo.imagen = 'images/' + path
+  }
 }
