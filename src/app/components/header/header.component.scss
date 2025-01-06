@@ -1,0 +1,33 @@
+$header-bg: #333333;
+$logo-bg: #5f9ea0;
+
+:host{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: $header-bg;
+
+    nav{
+        padding: 10px 0;
+        ul{
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            li{
+                a{
+                    color:white;
+                    text-decoration: none;
+                    padding:10px 15px;
+
+                    &#logo{
+                        background-color: $logo-bg;
+                    }    
+                }
+            }
+
+            span{
+                margin: 0 20px;
+            }
+        }
+    }
+}
