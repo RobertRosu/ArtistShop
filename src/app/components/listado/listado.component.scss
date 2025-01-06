@@ -1,0 +1,49 @@
+$table-head-bg: #980081;
+$table-row-event-bg: #f3f3f3;
+
+:host{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 0;
+
+    table{
+        border-collapse: collapse;
+        border: 1px solid gray;
+
+        thead{
+            background-color: $table-head-bg;
+
+            tr{
+                th{
+                    padding: 10px;
+                    color:white;
+                    text-align: left;
+                }
+            }
+        }
+        tbody{
+            tr{
+                td{
+                    padding: 5px 10px;
+
+                    img{
+                        width: 60px;
+                        height: 60px;
+                    }
+
+                    button{
+                        border: 1px solid black;
+                        cursor:pointer;
+                        padding: 5px;
+                    }
+                }
+
+                &:nth-child(even){
+                    background-color: $table-row-event-bg;
+                }
+            }
+        }
+    }
+}

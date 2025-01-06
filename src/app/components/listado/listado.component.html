@@ -1,1 +1,26 @@
-<p>listado works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+            <th>Borrar</th>
+            <th>Seleccionar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let articulo of articulos; trackBy: getId">
+            <tr>
+                <td>{{articulo.id}}</td>
+                <td>{{articulo.nombre}}</td>
+                <td>{{articulo.descripcion}}</td>
+                <td>{{articulo.precio}}</td>
+                <td><img src="assets/{{articulo.imagen}}" alt="imagen"></td>
+                <td><button>Borrar</button></td>
+                <td><button>Seleccionar</button></td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
