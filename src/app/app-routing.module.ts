@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:'listado', component: ListadoComponent},
   {path:'lista-general', component: ListaGeneralComponent},
   {path:'modificar/:id', component: ModificarComponent},
-  {path:'**', pathMatch:'full', redirectTo:'home'}
+  {path:'**', pathMatch:'full', redirectTo:'/home'}
 ];
 
 @NgModule({
