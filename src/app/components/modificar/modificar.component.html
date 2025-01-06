@@ -1,1 +1,30 @@
-<p>modificar works!</p>
+<div class="container">
+    <form action="">
+        <div>
+            <label for="nombre">nombre: </label>
+            <input type="text" name="nombre" id="nombre">
+        </div>
+        <div>
+            <label for="descripcion">descripcion: </label>
+            <input type="text" name="descripcion" id="descripcion">
+        </div>
+        <div><label for="precio">precio: </label>
+            <input type="number" name="precio" id="precio">
+        </div>
+        <div>
+            <label for="imagen">imagen: </label>
+            <input type="text" id="imagen" readonly>
+        </div>
+
+        <div class="opciones">
+            <button>Agregar</button>
+            <button>Modificar</button>
+        </div>
+    </form>
+    
+    <div id="imagen-preview">
+        <h1>Foto existente</h1>
+        <img src="assets/images/dummy-image-square.jpg" alt="imagen preview">
+        <input type="file">
+    </div>
+</div>
