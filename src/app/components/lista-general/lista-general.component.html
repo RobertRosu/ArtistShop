@@ -2,6 +2,16 @@
     <h1>The artist's shop</h1>
 </div>
 
-<div id="grid" *ngFor="let articulo of articulos; trackBy: getId">
-    
+<div id="grid">
+    <ng-container *ngFor="let articulo of articulos; trackBy: getId">
+        <div class="card">
+            <img src="assets/{{articulo.imagen}}" alt="imagen">
+            <div class="info">
+                <h3 class="nombre">{{articulo.nombre}}</h3>
+                <p class="descripcion">{{articulo.descripcion}}</p>
+                <p class="precio">Precio {{articulo.precio | currency:'EUR'}}</p>
+            </div>
+            <button>Añadir al carrito</button>
+        </div>    
+    </ng-container>
 </div>

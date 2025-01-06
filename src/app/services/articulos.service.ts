@@ -13,7 +13,7 @@ export class ArticulosService {
   public recuperarTodos(){
     // Convierte el json en un array de objetos `Articulo`
     return this.http.get<any[]>('http://localhost/ArtistShop_API/recuperarTodos.php').pipe(
-      map(data => data.map(item => new Articulo(item.id, item.nombre, item.precio, item.descripcion, item.imagen)))
+      map(data => data.map(item => new Articulo(item.id, item.nombre, item.descripcion, item.precio, item.imagen)))
     );
   }
 }
