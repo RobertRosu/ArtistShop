@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs';
 import { Articulo } from 'src/app/model/Articulo';
 import { ArticulosService } from 'src/app/services/articulos.service';
 
