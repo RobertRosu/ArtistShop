@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ListaGeneralComponent } from './components/lista-general/lista-general.component';
 import { ListadoComponent } from './components/listado/listado.component';
 import { ModificarComponent } from './components/modificar/modificar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ModificarComponent } from './components/modificar/modificar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
