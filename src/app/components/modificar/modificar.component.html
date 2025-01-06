@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="">
+    <form action="" #form>
         <div>
             <label for="nombre">nombre: </label>
             <input type="text" 
@@ -27,7 +27,8 @@
             <label for="imagen">imagen: </label>
             <input 
             type="text" 
-            id="imagen" 
+            id="imagen"
+            name="imagen"
             readonly
             [value]="articulo.imagen != '' || undefined ? articulo.imagen : ''">
         </div>
@@ -38,7 +39,7 @@
             [class]="opcion == 'modif' ? 'hide' : ''">Agregar</button>
 
             <button 
-            (click)="$event.preventDefault()"
+            (click)="$event.preventDefault();modificar(form)"
             [class]="opcion == 'alta' ? 'hide' : ''">Modificar</button>
         </div>
     </form>

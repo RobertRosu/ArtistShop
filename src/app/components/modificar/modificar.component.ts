@@ -29,6 +29,23 @@ export class ModificarComponent {
     })
   }
 
+  modificar(form: HTMLFormElement){
+
+    const fd = new FormData(form)
+
+    const datos_json = {
+      'id': this.articulo.id,
+      'nombre': fd.get('nombre'),
+      'descripcion': fd.get('descripcion'),
+      'precio': fd.get('precio'),
+      'imagen': fd.get('imagen')
+    }
+
+    this._articulosService.modificar(datos_json).subscribe((data: any) => {
+      this.seleccionar(datos_json.id)
+    })
+  }
+
   cambiarRutaArchivo(path: string | undefined){
     this.articulo.imagen = 'images/' + path
   }
