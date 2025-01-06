@@ -18,7 +18,7 @@
                 <td>{{articulo.descripcion}}</td>
                 <td>{{articulo.precio}}</td>
                 <td><img src="assets/{{articulo.imagen}}" alt="imagen"></td>
-                <td><button>Borrar</button></td>
+                <td><button (click)="baja(articulo.id)">Borrar</button></td>
                 <td><button>Seleccionar</button></td>
             </tr>
         </ng-container>

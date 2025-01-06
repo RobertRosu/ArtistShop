@@ -12,13 +12,23 @@ export class ListadoComponent implements OnInit{
   constructor(private _articulosService: ArticulosService){}
 
   ngOnInit(): void {
-    this._articulosService.recuperarTodos().subscribe((data: Articulo[]) => {
-      this.articulos = data
-      console.log(data)
+    this.recuperarTodos()
+  }
+
+  baja(id: number){
+    this._articulosService.baja(id).subscribe((data: any) => {
+      alert('product deleted')
+      this.recuperarTodos()
     })
   }
 
   getId(item: any): number {
-    return item.id; // Usa el ID como identificador único
+    return item.id;
+  }
+
+  recuperarTodos(){
+    this._articulosService.recuperarTodos().subscribe((data: Articulo[]) => {
+      this.articulos = data
+    })
   }
 }
