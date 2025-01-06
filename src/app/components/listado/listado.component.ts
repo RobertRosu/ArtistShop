@@ -15,6 +15,12 @@ export class ListadoComponent implements OnInit{
     this.recuperarTodos()
   }
 
+  recuperarTodos(){
+    this._articulosService.recuperarTodos().subscribe((data: Articulo[]) => {
+      this.articulos = data
+    })
+  }
+
   baja(id: number){
     this._articulosService.baja(id).subscribe((data: any) => {
       alert('product deleted')
@@ -24,11 +30,5 @@ export class ListadoComponent implements OnInit{
 
   getId(item: any): number {
     return item.id;
-  }
-
-  recuperarTodos(){
-    this._articulosService.recuperarTodos().subscribe((data: Articulo[]) => {
-      this.articulos = data
-    })
   }
 }
