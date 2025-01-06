@@ -18,6 +18,14 @@ export class ArticulosService {
     );
   }
 
+  public seleccionar(id: number): Observable<Articulo>{
+    return this.http.get<any>(`http://localhost/ArtistShop_API/seleccionar.php?id=${id}`).pipe(
+      map(data => {
+        const item = data[0]
+        return new Articulo(item.id, item.nombre, item.descripcion, item.precio, item.imagen)
+      }))
+  }
+
   public baja(id: number){
     return this.http.delete(`http://localhost/ArtistShop_API/baja.php?id=${id}`)
   }

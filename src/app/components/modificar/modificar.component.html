@@ -2,18 +2,29 @@
     <form action="">
         <div>
             <label for="nombre">nombre: </label>
-            <input type="text" name="nombre" id="nombre">
+            <input type="text" 
+            name="nombre" 
+            id="nombre" 
+            [value]="articulo.nombre != '' || undefined ? articulo.nombre : ''">
         </div>
         <div>
             <label for="descripcion">descripcion: </label>
-            <input type="text" name="descripcion" id="descripcion">
+            <input 
+            type="text" 
+            name="descripcion" 
+            id="descripcion" 
+            [value]="articulo.descripcion != '' || undefined ? articulo.descripcion : ''">
         </div>
         <div><label for="precio">precio: </label>
             <input type="number" name="precio" id="precio">
         </div>
         <div>
             <label for="imagen">imagen: </label>
-            <input type="text" id="imagen" readonly>
+            <input 
+            type="text" 
+            id="imagen" 
+            readonly
+            [value]="articulo.imagen != '' || undefined ? articulo.imagen : ''">
         </div>
 
         <div class="opciones">
@@ -24,7 +35,7 @@
     
     <div id="imagen-preview">
         <h1>Foto existente</h1>
-        <img src="assets/images/dummy-image-square.jpg" alt="imagen preview">
+        <img [src]="articulo.imagen == '' || undefined ? 'assets/images/dummy-image-square.jpg' : 'assets/' + articulo.imagen" alt="imagen preview">
         <input type="file">
     </div>
 </div>
